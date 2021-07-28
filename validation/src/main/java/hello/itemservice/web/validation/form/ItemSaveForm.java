@@ -1,4 +1,4 @@
-package hello.itemservice.domain.item;
+package hello.itemservice.web.validation.form;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
@@ -7,10 +7,7 @@ import lombok.Data;
 import org.hibernate.validator.constraints.Range;
 
 @Data
-public class Item {
-
-    @NotNull
-    private Long id;
+public class ItemSaveForm {
 
     @NotBlank(message = "공백 허용하지 않음")
     private String itemName;
@@ -22,13 +19,4 @@ public class Item {
     @NotNull
     @Max(value = 9999)
     private Integer quantity;
-
-    public Item() {
-    }
-
-    public Item(String itemName, Integer price, Integer quantity) {
-        this.itemName = itemName;
-        this.price = price;
-        this.quantity = quantity;
-    }
 }
